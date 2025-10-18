@@ -1,0 +1,82 @@
+AI Vendor Evaluation Scorecard
+
+Instructions:
+- List up to 5 vendors in the columns
+- Score each criterion on a 1-5 scale (5=Excellent, 4=Good, 3=Acceptable, 2=Concerning, 1=Unacceptable)
+- Adjust weights if needed (must total 100%)
+- Review weighted scores and overall ranking
+- Document decision rationale at bottom
+
+Evaluation Criteria,Weight,Vendor 1,Vendor 2,Vendor 3,Vendor 4,Vendor 5
+,,,,,,
+
+TECHNICAL CAPABILITY (25% total),,,,,
+Core Technology,5%,,,,,
+Integration Complexity,5%,,,,,
+Scalability & Performance,7%,,,,,
+Security & Compliance,8%,,,,,
+Technical Category Average,25%,=AVERAGE(C7:C10),=AVERAGE(D7:D10),=AVERAGE(E7:E10),=AVERAGE(F7:F10),=AVERAGE(G7:G10)
+,,,,,,
+BUSINESS VIABILITY (20% total),,,,,
+Company Stability,7%,,,,,
+Customer Base & References,7%,,,,,
+Product Roadmap,6%,,,,,
+Business Category Average,20%,=AVERAGE(C14:C16),=AVERAGE(D14:D16),=AVERAGE(E14:E16),=AVERAGE(F14:F16),=AVERAGE(G14:G16)
+,,,,,,
+PRICING & VALUE (20% total),,,,,
+Pricing Model Fairness,7%,,,,,
+Total Cost of Ownership,7%,,,,,
+Value Delivered,6%,,,,,
+Pricing Category Average,20%,=AVERAGE(C21:C23),=AVERAGE(D21:D23),=AVERAGE(E21:E23),=AVERAGE(F21:F23),=AVERAGE(G21:G23)
+,,,,,,
+IMPLEMENTATION RISK (20% total),,,,,
+Implementation Complexity,7%,,,,,
+Vendor Support Quality,7%,,,,,
+Change Management Needs,6%,,,,,
+Implementation Category Average,20%,=AVERAGE(C28:C30),=AVERAGE(D28:D30),=AVERAGE(E28:E30),=AVERAGE(F28:F30),=AVERAGE(G28:G30)
+,,,,,,
+CONTRACT TERMS (15% total),,,,,
+Contract Flexibility,5%,,,,,
+Performance Guarantees,5%,,,,,
+Data Rights & IP Protection,5%,,,,,
+Contract Category Average,15%,=AVERAGE(C35:C37),=AVERAGE(D35:D37),=AVERAGE(E35:E37),=AVERAGE(F35:F37),=AVERAGE(G35:G37)
+,,,,,,
+OVERALL SCORES,,,,,
+Technical (25%),25%,=(C11*0.25),=(D11*0.25),=(E11*0.25),=(F11*0.25),=(G11*0.25)
+Business (20%),20%,=(C17*0.20),=(D17*0.20),=(E17*0.20),=(F17*0.20),=(G17*0.20)
+Pricing (20%),20%,=(C24*0.20),=(D24*0.20),=(E24*0.20),=(F24*0.20),=(G24*0.20)
+Implementation (20%),20%,=(C31*0.20),=(D31*0.20),=(E31*0.20),=(F31*0.20),=(G31*0.20)
+Contract (15%),15%,=(C38*0.15),=(D38*0.15),=(E38*0.15),=(F38*0.15),=(G38*0.15)
+,,,,,,
+TOTAL WEIGHTED SCORE,100%,=SUM(C43:C47),=SUM(D43:D47),=SUM(E43:E47),=SUM(F43:F47),=SUM(G43:G47)
+,,,,,,
+RANKING (1=Best),,"=RANK(C49,$C$49:$G$49)","=RANK(D49,$C$49:$G$49)","=RANK(E49,$C$49:$G$49)","=RANK(F49,$C$49:$G$49)","=RANK(G49,$C$49:$G$49)"
+,,,,,,
+RECOMMENDATION,,,,,
+Score Interpretation:,,4.5-5.0 = Excellent,,,
+,,4.0-4.4 = Good,,,
+,,3.5-3.9 = Acceptable,,,
+,,3.0-3.4 = Concerning,,,
+,,<3.0 = Not Recommended,,,
+,,,,,,
+RED FLAGS CHECK,,,,,
+Any category <2.0?,,,,,
+Multiple flags in one category?,,,,,
+Total flags >10?,,,,,
+Any disqualifying flags?,,,,,
+,,,,,,
+DECISION RATIONALE,,,,,
+Selected Vendor:,,,,,
+Key Strengths:,,,,,
+Key Concerns:,,,,,
+Mitigation Plans:,,,,,
+Next Steps:,,,,,
+
+Scoring Guide:
+5 = Excellent: Exceeds expectations, clear competitive advantage
+4 = Good: Meets expectations, no significant concerns
+3 = Acceptable: Adequate, minor concerns but manageable
+2 = Concerning: Significant gaps or risks that need addressing
+1 = Unacceptable: Disqualifying issues, do not proceed
+
+Note: Save this file as Excel (.xlsx) to enable formulas
