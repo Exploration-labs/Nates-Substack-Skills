@@ -1,0 +1,122 @@
+{
+  "skill_name": "example-skill",
+  "skill_path": "/path/to/skill",
+  "test_version": "1.0",
+  "description": "Test cases for example-skill",
+  
+  "unit_tests": [
+    {
+      "name": "Test script executes successfully",
+      "type": "script",
+      "script": "example_script.py",
+      "args": ["arg1", "arg2"],
+      "expected_exit_code": 0,
+      "expected_output": null,
+      "description": "Verify the script runs without errors"
+    },
+    {
+      "name": "Test script with expected output",
+      "type": "script",
+      "script": "process_data.py",
+      "args": ["input.txt"],
+      "expected_exit_code": 0,
+      "expected_output": {
+        "contains": "Success"
+      },
+      "description": "Verify script produces expected output message"
+    },
+    {
+      "name": "Test error handling",
+      "type": "script",
+      "script": "validate_input.py",
+      "args": ["invalid_data.txt"],
+      "expected_exit_code": 1,
+      "expected_output": {
+        "contains": "Error"
+      },
+      "description": "Verify script fails gracefully with clear error message"
+    }
+  ],
+  
+  "integration_tests": [
+    {
+      "name": "Test complete workflow",
+      "type": "workflow",
+      "description": "End-to-end test of typical skill usage",
+      "setup": {
+        "actions": [
+          "Create test directory",
+          "Copy test fixtures"
+        ]
+      },
+      "steps": [
+        {
+          "action": "Initialize process",
+          "validation": "Initialization successful"
+        },
+        {
+          "action": "Process data",
+          "validation": "Data processed correctly"
+        },
+        {
+          "action": "Generate output",
+          "validation": "Output file created"
+        }
+      ],
+      "input": {
+        "user_query": "Example query that triggers this skill",
+        "files": ["test_input.txt"]
+      },
+      "expected_output": {
+        "type": "file",
+        "path": "output.txt",
+        "validation": "File exists and contains expected content"
+      },
+      "cleanup": {
+        "actions": [
+          "Remove test directory"
+        ]
+      }
+    }
+  ],
+  
+  "regression_tests": [
+    {
+      "name": "Regression: Baseline behavior check",
+      "description": "Ensure skill behavior hasn't changed from established baseline",
+      "input": {
+        "user_query": "Example query with known expected behavior",
+        "files": ["test_data.txt"]
+      },
+      "baseline_file": "baselines/expected_output_v1.txt",
+      "validation_method": "exact_match",
+      "baseline_version": "1.0",
+      "baseline_date": "2025-01-15",
+      "notes": "This baseline represents the expected output format as of v1.0"
+    },
+    {
+      "name": "Regression: Output format consistency",
+      "description": "Verify output maintains expected format",
+      "input": {
+        "user_query": "Generate report",
+        "files": []
+      },
+      "baseline_file": "baselines/report_format_v1.json",
+      "validation_method": "structural_match",
+      "notes": "Compare structure, not specific content values"
+    }
+  ],
+  
+  "_instructions": {
+    "unit_tests": "Test individual components (scripts, functions) in isolation. Each test should verify one specific behavior.",
+    "integration_tests": "Test complete workflows and interactions between components. These represent real user scenarios.",
+    "regression_tests": "Compare outputs against known baselines to catch unintended changes. Update baselines intentionally, not automatically.",
+    "validation_methods": {
+      "exact_match": "Output must match exactly (use for deterministic outputs)",
+      "contains": "Output must contain specified string (use for checking error messages or specific content)",
+      "pattern": "Output must match regex pattern (use for formatted outputs with variable content)",
+      "structural_match": "Output structure must match (use for documents where content varies but structure is consistent)"
+    },
+    "howto": "1. Fill in test details based on your skill. 2. Create fixture files in tests/fixtures/. 3. Create baseline files in tests/baselines/. 4. Run with: run_tests.py <this-file>"
+  }
+}
